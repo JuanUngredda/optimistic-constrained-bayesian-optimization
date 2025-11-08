@@ -1,0 +1,369 @@
+{
+  "target": {
+    "module_name": "cifar10_cnn_obj",
+    "identifier": "original",
+    "n_init_observations": 30,
+    "use_standardization": false,
+    "noise_std": 0.01,
+    "ard": true,
+    "is_hyperparameter_trainable": true,
+    "gp_prior": {
+      "lengthscale": {
+        "gamma": {
+          "concentration": 0.25,
+          "rate": 0.5
+        }
+      },
+      "outputscale": {
+        "gamma": {
+          "concentration": 2.0,
+          "rate": 0.15
+        }
+      },
+      "noise_std": {
+        "gaussian": {
+          "loc": 0.01,
+          "scale": 0.01
+        }
+      }
+    }
+  },
+  "constraints": [
+    {
+      "module_name": "cifar10_cnn_cst1",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst2",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst3",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst4",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst5",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst6",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst7",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst8",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst9",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    },
+    {
+      "module_name": "cifar10_cnn_cst10",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 30,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "greater_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.01,
+            "scale": 0.01
+          }
+        }
+      }
+    }
+  ],
+  "xsize": 100,
+  "zsize": 100,
+  "n_bo_iterations": 201,
+  "beta": 40.0,
+  "n_training_iter_gp_hyper": 30,
+  "update_gp_hyper_every_iter": 1
+}

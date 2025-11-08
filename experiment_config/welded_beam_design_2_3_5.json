@@ -1,0 +1,204 @@
+{
+  "target": {
+    "module_name": "welded_beam_design_2_3_5_obj",
+    "identifier": "original_2_1",
+    "n_init_observations": 5,
+    "use_standardization": false,
+    "noise_std": 0.01,
+    "ard": true,
+    "is_hyperparameter_trainable": true,
+    "gp_prior": {
+      "lengthscale": {
+        "gamma": {
+          "concentration": 0.25,
+          "rate": 0.5
+        }
+      },
+      "outputscale": {
+        "gamma": {
+          "concentration": 2.0,
+          "rate": 0.15
+        }
+      },
+      "noise_std": {
+        "gaussian": {
+          "loc": 0.0,
+          "scale": 0.1
+        }
+      }
+    }
+  },
+  "constraints": [
+    {
+      "module_name": "welded_beam_design_2_3_5_cst1",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "less_than_equal_to",
+      "threshold": -0.3215125873389276,
+      "fix_mean_at": -0.3215125873389276,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.0,
+            "scale": 0.1
+          }
+        }
+      }
+    },
+    {
+      "module_name": "welded_beam_design_2_3_5_cst2",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "less_than_equal_to",
+      "threshold": -0.999658,
+      "fix_mean_at": -0.999658,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.0,
+            "scale": 0.1
+          }
+        }
+      }
+    },
+    {
+      "module_name": "welded_beam_design_2_3_5_cst3",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "less_than_equal_to",
+      "threshold": 0.9877783175228785,
+      "fix_mean_at": 0.9877783175228785,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.0,
+            "scale": 0.1
+          }
+        }
+      }
+    },
+    {
+      "module_name": "welded_beam_design_2_3_5_cst4",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "less_than_equal_to",
+      "threshold": 1.2476827532236885,
+      "fix_mean_at": 1.2476827532236885,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.0,
+            "scale": 0.1
+          }
+        }
+      }
+    },
+    {
+      "module_name": "welded_beam_design_2_3_5_cst5",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 0.01,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "inequality": "less_than_equal_to",
+      "threshold": -0.9991903610402348,
+      "fix_mean_at": -0.9991903610402348,
+      "gp_prior": {
+        "lengthscale": {
+          "gamma": {
+            "concentration": 0.25,
+            "rate": 0.5
+          }
+        },
+        "outputscale": {
+          "gamma": {
+            "concentration": 2.0,
+            "rate": 0.15
+          }
+        },
+        "noise_std": {
+          "gaussian": {
+            "loc": 0.0,
+            "scale": 0.1
+          }
+        }
+      }
+    }
+  ],
+  "xsize": 100,
+  "zsize": 100,
+  "n_bo_iterations": 201,
+  "beta": 15.0,
+  "n_training_iter_gp_hyper": 30,
+  "update_gp_hyper_every_iter": 1
+}
