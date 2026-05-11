@@ -192,13 +192,13 @@ for nr in range(nrand):
     sys.stdout.flush()
 
     # save regret
-    regret_filename = f"{save_result_filename_prefix}_regrets.pkl"
+    regret_filename = f"{save_result_filename_prefix}_regrets_run_{nr}.pkl"
     with open(regret_filename, "wb") as f:
         pickle.dump(regrets, f, protocol=pickle.HIGHEST_PROTOCOL)
         print(f"Save regrets to {regret_filename}.")
 
     # save query_types, input queries
-    bo_info_filename = f"{save_result_filename_prefix}_bo_info.pkl"
+    bo_info_filename = f"{save_result_filename_prefix}_bo_info_run_{nr}.pkl"
     with open(bo_info_filename, "wb") as f:
         pickle.dump(
             {
