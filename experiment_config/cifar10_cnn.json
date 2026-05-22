@@ -360,9 +360,9 @@
       }
     }
   ],
-  "xsize": 100,
-  "zsize": 100,
-  "n_bo_iterations": 201,
+  "xsize": 1000,
+  "zsize": 1000,
+  "n_bo_iterations": 300,
   "beta": 40.0,
   "n_training_iter_gp_hyper": 30,
   "update_gp_hyper_every_iter": 1

@@ -14,6 +14,11 @@ import gpytorch
 from matplotlib import pyplot as plt
 
 
+# Numerical-stability floor for the GP likelihood noise. The noise hyperparameter
+# is fixed here and not learned (raw_noise.requires_grad is disabled below).
+NOISE_FLOOR = 1e-4
+
+
 class GP(gpytorch.models.ExactGP):
     """
     Gaussian Process regression model with RBF kernel.
@@ -76,7 +81,7 @@ class GP(gpytorch.models.ExactGP):
         #          'outputscale': gpytorch.priors.GammaPrior(2.0, 0.15),
         #          'noise_std': gpytorch.priors.NormalPrior(0., 1.)}
         likelihood = gpytorch.likelihoods.GaussianLikelihood(
-            noise_constraint=gpytorch.constraints.GreaterThan(1e-3),
+            noise_constraint=gpytorch.constraints.GreaterThan(NOISE_FLOOR),
         )
         # print(
             # "gp.py: WARNING: avoid numerical issue by seeting noise constraint:",
@@ -138,10 +143,10 @@ class GP(gpytorch.models.ExactGP):
             self.covar_module.outputscale = (
                 prior["outputscale"].mean if prior is not None else 1.0
             )
-            # Initialize the noise variance
-            self.likelihood.noise_covar.noise = (
-                0.001  # NOTE: this is important to ensure proper GP estimation
-            )
+            # Initialize the noise variance at the numerical-stability floor.
+            self.likelihood.noise_covar.noise = NOISE_FLOOR
+            # Freeze: treat the underlying function as deterministic.
+            self.likelihood.noise_covar.raw_noise.requires_grad_(False)
             # Initialize the constant mean
             self.mean_module.constant = 0.0
 
@@ -152,6 +157,7 @@ class GP(gpytorch.models.ExactGP):
 
         else:
             self.initialize(**initialization)
+            self.likelihood.noise_covar.raw_noise.requires_grad_(False)
 
         print("All constraints:")
         for constraint_name, constraint in self.named_constraints():
