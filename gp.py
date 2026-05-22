@@ -226,19 +226,23 @@ class GP(gpytorch.models.ExactGP):
         # "Loss" for GPs - the marginal log likelihood
         mll = gpytorch.mlls.ExactMarginalLogLikelihood(model.likelihood, model)
 
-        for i in range(training_iter):
-            # Zero gradients from previous iteration
-            optimizer.zero_grad()
-            # Output from model
-            output = model(train_x)
-            # Calc loss and backprop gradients
-            loss = -mll(output, train_y)
-            loss.backward()
-            if verbose:
-                print(
-                    f"Iter {i+1}/{training_iter} - Loss: {loss.item():.3f} lengthscale: {model.covar_module.base_kernel.lengthscale}  noise: {model.likelihood.noise}"
-                )
-            optimizer.step()
+        # Allow Cholesky to add larger jitter before giving up. Default is
+        # start=1e-6, max_tries=3 → cap ~1e-4, which is too tight when the
+        # frozen noise floor is also 1e-4 and ARD lengthscales shrink.
+        with gpytorch.settings.cholesky_jitter(1e-4), gpytorch.settings.cholesky_max_tries(6):
+            for i in range(training_iter):
+                # Zero gradients from previous iteration
+                optimizer.zero_grad()
+                # Output from model
+                output = model(train_x)
+                # Calc loss and backprop gradients
+                loss = -mll(output, train_y)
+                loss.backward()
+                if verbose:
+                    print(
+                        f"Iter {i+1}/{training_iter} - Loss: {loss.item():.3f} lengthscale: {model.covar_module.base_kernel.lengthscale}  noise: {model.likelihood.noise}"
+                    )
+                optimizer.step()
 
     @staticmethod
     def predict_f(model, test_x):
