@@ -246,12 +246,12 @@ class GP(gpytorch.models.ExactGP):
 
     @staticmethod
     def predict_f(model, test_x):
-        with torch.no_grad():
+        with torch.no_grad(), gpytorch.settings.cholesky_jitter(1e-4), gpytorch.settings.cholesky_max_tries(6):
             model.eval()
             return model(test_x)
 
     @staticmethod
     def predict_y(model, test_x):
-        with torch.no_grad():
+        with torch.no_grad(), gpytorch.settings.cholesky_jitter(1e-4), gpytorch.settings.cholesky_max_tries(6):
             model.eval()
             return model.likelihood(model(test_x))
