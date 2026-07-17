@@ -14,9 +14,17 @@ import gpytorch
 from matplotlib import pyplot as plt
 
 
-# Numerical-stability floor for the GP likelihood noise. The noise hyperparameter
-# is fixed here and not learned (raw_noise.requires_grad is disabled below).
+# Numerical-stability floor for the GP likelihood noise. By default the noise
+# hyperparameter is fixed here and not learned (raw_noise.requires_grad is
+# disabled below); pass learn_noise=True to GP() to let it be optimized instead.
 NOISE_FLOOR = 1e-4
+
+# Initial noise variance used when learn_noise=True. Must be strictly above
+# NOISE_FLOOR: initializing exactly at the GreaterThan(NOISE_FLOOR) constraint
+# boundary maps to raw_noise = -inf under the softplus transform, which has
+# zero gradient everywhere and silently prevents the noise from ever moving
+# even though requires_grad is True.
+NOISE_INIT_LEARNABLE = 1e-2
 
 
 class GP(gpytorch.models.ExactGP):
@@ -44,7 +52,10 @@ class GP(gpytorch.models.ExactGP):
         Use Automatic Relevance Determination (different lengthscale per dimension).
     fix_mean_at : float, optional
         Fix the mean function at a specific value.
-    
+    learn_noise : bool, default=False
+        If True, the likelihood noise is optimized by optimize_hyperparameters
+        instead of being frozen at NOISE_FLOOR.
+
     Attributes
     ----------
     mean_module : gpytorch.means.ConstantMean
@@ -66,6 +77,7 @@ class GP(gpytorch.models.ExactGP):
         prior=None,
         ard=True,
         fix_mean_at=None,
+        learn_noise=False,
     ):
         # if ard, ard_num_dims = dim, use the different lengthscales for different input dimensions
         # else, ard_num_dims = None, use the same lengthscale for all input dimensions
@@ -143,10 +155,15 @@ class GP(gpytorch.models.ExactGP):
             self.covar_module.outputscale = (
                 prior["outputscale"].mean if prior is not None else 1.0
             )
-            # Initialize the noise variance at the numerical-stability floor.
-            self.likelihood.noise_covar.noise = NOISE_FLOOR
-            # Freeze: treat the underlying function as deterministic.
-            self.likelihood.noise_covar.raw_noise.requires_grad_(False)
+            # Initialize the noise variance. When learning noise, start strictly
+            # above NOISE_FLOOR (see NOISE_INIT_LEARNABLE) so gradients can flow;
+            # otherwise pin it at the floor and freeze it.
+            if learn_noise:
+                self.likelihood.noise_covar.noise = NOISE_INIT_LEARNABLE
+            else:
+                self.likelihood.noise_covar.noise = NOISE_FLOOR
+                # Freeze: treat the underlying function as deterministic.
+                self.likelihood.noise_covar.raw_noise.requires_grad_(False)
             # Initialize the constant mean
             self.mean_module.constant = 0.0
 
@@ -157,7 +174,13 @@ class GP(gpytorch.models.ExactGP):
 
         else:
             self.initialize(**initialization)
-            self.likelihood.noise_covar.raw_noise.requires_grad_(False)
+            if not learn_noise:
+                self.likelihood.noise_covar.raw_noise.requires_grad_(False)
+            elif not torch.isfinite(self.likelihood.noise_covar.raw_noise).all():
+                # Loaded noise sat exactly on the constraint boundary (see
+                # NOISE_INIT_LEARNABLE comment above) -- nudge off it so it's
+                # actually learnable.
+                self.likelihood.noise_covar.noise = NOISE_INIT_LEARNABLE
 
         print("All constraints:")
         for constraint_name, constraint in self.named_constraints():

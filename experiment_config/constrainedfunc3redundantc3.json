@@ -1,0 +1,120 @@
+{
+  "target": {
+    "module_name": "constrainedfunc3redundant_obj",
+    "identifier": "original_2_1",
+    "n_init_observations": 5,
+    "use_standardization": false,
+    "noise_std": 0.0616441,
+    "ard": true,
+    "is_hyperparameter_trainable": true,
+    "learn_noise": true,
+    "gp_prior": {
+      "lengthscale": {"gamma": {"concentration": 0.25, "rate": 0.5}},
+      "outputscale": {"gamma": {"concentration": 2.0, "rate": 0.15}},
+      "noise_std": {"gaussian": {"loc": 0.0, "scale": 0.1}}
+    }
+  },
+  "constraints": [
+    {
+      "module_name": "constrainedfunc3redundant_cst1",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 1e-6,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "learn_noise": true,
+      "inequality": "less_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {"gamma": {"concentration": 0.25, "rate": 0.5}},
+        "outputscale": {"gamma": {"concentration": 2.0, "rate": 0.15}},
+        "noise_std": {"gaussian": {"loc": 0.0, "scale": 0.1}}
+      }
+    },
+    {
+      "module_name": "constrainedfunc3redundant_cst2",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 1e-6,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "learn_noise": true,
+      "inequality": "less_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {"gamma": {"concentration": 0.25, "rate": 0.5}},
+        "outputscale": {"gamma": {"concentration": 2.0, "rate": 0.15}},
+        "noise_std": {"gaussian": {"loc": 0.0, "scale": 0.1}}
+      }
+    },
+    {
+      "module_name": "constrainedfunc3redundant_cst3",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 0.02,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "learn_noise": true,
+      "inequality": "less_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {"gamma": {"concentration": 0.25, "rate": 0.5}},
+        "outputscale": {"gamma": {"concentration": 2.0, "rate": 0.15}},
+        "noise_std": {"gaussian": {"loc": 0.0, "scale": 0.1}}
+      }
+    },
+    {
+      "module_name": "constrainedfunc3redundant_cst4",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 1e-6,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "learn_noise": true,
+      "inequality": "less_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {"gamma": {"concentration": 0.25, "rate": 0.5}},
+        "outputscale": {"gamma": {"concentration": 2.0, "rate": 0.15}},
+        "noise_std": {"gaussian": {"loc": 0.0, "scale": 0.1}}
+      }
+    },
+    {
+      "module_name": "constrainedfunc3redundant_cst5",
+      "share_observation_with_constraint": -1,
+      "identifier": "original_2_1",
+      "n_init_observations": 5,
+      "use_standardization": false,
+      "noise_std": 2.0,
+      "ard": true,
+      "is_hyperparameter_trainable": true,
+      "learn_noise": true,
+      "inequality": "less_than_equal_to",
+      "threshold": 0.0,
+      "fix_mean_at": 0.0,
+      "gp_prior": {
+        "lengthscale": {"gamma": {"concentration": 0.25, "rate": 0.5}},
+        "outputscale": {"gamma": {"concentration": 2.0, "rate": 0.15}},
+        "noise_std": {"gaussian": {"loc": 0.0, "scale": 0.1}}
+      }
+    }
+  ],
+  "xsize": 100,
+  "zsize": 100,
+  "n_bo_iterations": 101,
+  "beta": 20.0,
+  "n_training_iter_gp_hyper": 30,
+  "update_gp_hyper_every_iter": 1
+}

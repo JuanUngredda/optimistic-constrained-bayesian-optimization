@@ -43,7 +43,13 @@
     "pressurevessel_cst1",
     "pressurevessel_cst2",
     "pressurevessel_cst3",
-    "pressurevessel_cst4"
+    "pressurevessel_cst4",
+    "constrainedfunc3redundant_obj",
+    "constrainedfunc3redundant_cst1",
+    "constrainedfunc3redundant_cst2",
+    "constrainedfunc3redundant_cst3",
+    "constrainedfunc3redundant_cst4",
+    "constrainedfunc3redundant_cst5"
   ],
   "module2class": {
     "gausscurve": "GaussCurve",
@@ -89,6 +95,12 @@
     "pressurevessel_cst1": "PressureVessel_CST1",
     "pressurevessel_cst2": "PressureVessel_CST2",
     "pressurevessel_cst3": "PressureVessel_CST3",
-    "pressurevessel_cst4": "PressureVessel_CST4"
+    "pressurevessel_cst4": "PressureVessel_CST4",
+    "constrainedfunc3redundant_obj": "ConstrainedFunc3Redundant_OBJ",
+    "constrainedfunc3redundant_cst1": "ConstrainedFunc3Redundant_CST1",
+    "constrainedfunc3redundant_cst2": "ConstrainedFunc3Redundant_CST2",
+    "constrainedfunc3redundant_cst3": "ConstrainedFunc3Redundant_CST3",
+    "constrainedfunc3redundant_cst4": "ConstrainedFunc3Redundant_CST4",
+    "constrainedfunc3redundant_cst5": "ConstrainedFunc3Redundant_CST5"
   }
 }

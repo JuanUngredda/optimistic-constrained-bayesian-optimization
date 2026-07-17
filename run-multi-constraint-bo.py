@@ -86,6 +86,7 @@ target = {
     "ard": data["target"]["ard"],
     "get_beta_t": target_get_beta_t,
     "fix_mean_at": None,
+    "learn_noise": data["target"].get("learn_noise", False),
 }
 
 constraint_list = [
@@ -110,6 +111,7 @@ constraint_list = [
         "noise_std": constraint_info["noise_std"],
         "ard": constraint_info["ard"],
         "threshold": constraint_info["threshold"],
+        "learn_noise": constraint_info.get("learn_noise", False),
         "get_beta_t": constraint_get_beta_t,
         "fix_mean_at": constraint_info["fix_mean_at"]
         if (

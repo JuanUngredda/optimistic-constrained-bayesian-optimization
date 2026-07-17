@@ -132,6 +132,7 @@ def build_gp(func_info):
             prior=get_prior(func_info["gp_prior"]),
             ard=func_info["ard"],
             fix_mean_at=func_info["fix_mean_at"],
+            learn_noise=func_info.get("learn_noise", False),
         )
     else:
         # fixed hyperparameters
