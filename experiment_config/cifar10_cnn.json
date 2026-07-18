@@ -1,6 +1,7 @@
 {
   "target": {
     "module_name": "cifar10_cnn_obj",
+    "learn_noise": false,
     "identifier": "original",
     "n_init_observations": 30,
     "use_standardization": false,
@@ -31,6 +32,7 @@
   "constraints": [
     {
       "module_name": "cifar10_cnn_cst1",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -64,6 +66,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst2",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -97,6 +100,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst3",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -130,6 +134,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst4",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -163,6 +168,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst5",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -196,6 +202,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst6",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -229,6 +236,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst7",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -262,6 +270,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst8",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -295,6 +304,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst9",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,
@@ -328,6 +338,7 @@
     },
     {
       "module_name": "cifar10_cnn_cst10",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 30,

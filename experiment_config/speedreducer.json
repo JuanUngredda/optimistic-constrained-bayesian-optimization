@@ -1,6 +1,7 @@
 {
   "target": {
     "module_name": "speedreducer_obj",
+    "learn_noise": false,
     "identifier": "original_2_1",
     "n_init_observations": 6,
     "use_standardization": false,
@@ -16,6 +17,7 @@
   "constraints": [
     {
       "module_name": "speedreducer_cst1",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 6,
@@ -34,6 +36,7 @@
     },
     {
       "module_name": "speedreducer_cst2",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -52,6 +55,7 @@
     },
     {
       "module_name": "speedreducer_cst3",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -70,6 +74,7 @@
     },
     {
       "module_name": "speedreducer_cst4",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -88,6 +93,7 @@
     },
     {
       "module_name": "speedreducer_cst5",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -106,6 +112,7 @@
     },
     {
       "module_name": "speedreducer_cst6",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -124,6 +131,7 @@
     },
     {
       "module_name": "speedreducer_cst7",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -142,6 +150,7 @@
     },
     {
       "module_name": "speedreducer_cst8",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -160,6 +169,7 @@
     },
     {
       "module_name": "speedreducer_cst9",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -178,6 +188,7 @@
     },
     {
       "module_name": "speedreducer_cst10",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -196,6 +207,7 @@
     },
     {
       "module_name": "speedreducer_cst11",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,

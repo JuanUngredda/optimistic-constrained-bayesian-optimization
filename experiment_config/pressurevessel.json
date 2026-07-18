@@ -1,6 +1,7 @@
 {
   "target": {
     "module_name": "pressurevessel_obj",
+    "learn_noise": false,
     "identifier": "original_2_1",
     "n_init_observations": 6,
     "use_standardization": false,
@@ -16,6 +17,7 @@
   "constraints": [
     {
       "module_name": "pressurevessel_cst1",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 6,
@@ -34,6 +36,7 @@
     },
     {
       "module_name": "pressurevessel_cst2",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -52,6 +55,7 @@
     },
     {
       "module_name": "pressurevessel_cst3",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
@@ -70,6 +74,7 @@
     },
     {
       "module_name": "pressurevessel_cst4",
+      "learn_noise": false,
       "share_observation_with_constraint": -1,
       "identifier": "original_2_1",
       "n_init_observations": 5,
